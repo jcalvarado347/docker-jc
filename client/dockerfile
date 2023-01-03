@@ -1,0 +1,10 @@
+FROM node:12.16.0-alpine
+
+WORKDIR /app
+COPY source env/bin/activate
+RUN pip install
+COPY . .
+ 
+EXPOSE 8080
+
+CMD ["python", "app.py"]
